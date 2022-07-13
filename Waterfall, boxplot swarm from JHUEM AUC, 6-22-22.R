@@ -9,6 +9,8 @@ library(ggbeeswarm)
 ##Set the working directory
 setwd("/Users/pettya/Desktop/R Analysis")
 
+
+
 #Waterfall plot of Log2 AUC/mCherry for JHUEM1 and JHUEM2
 ##Read in excel file with JHUEM1 and JHUEM2 variant Log2 AUC/mCherry data
 JHLog <- read_xlsx("JHUEM1, 2 NTC + variants, Log2 AUC data, 11-30-21.xlsx", 1)
