@@ -31,7 +31,7 @@ x <- 1:nrow(JHLogorder)
 JHLogorder$Variant <- factor(JHLogorder$Variant, 
                              levels= c("R248Q", "R248W", "R273C", "R273H", "Y220C", "WT"))
 
-##Generate waterfall plot 
+##Generate waterfall plot with x axis set as row number
 J <- ggplot(JHLogorder, aes(x= x, y= value)) + theme_classic() +
     labs(title= NULL, 
           x= NULL, y= expression(paste("Log2 ", Delta, "AUC"))) +
