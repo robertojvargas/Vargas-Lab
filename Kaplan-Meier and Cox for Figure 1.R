@@ -59,7 +59,7 @@ dev.off()
 endometrial_all_RT$VAF <- factor(endometrial_all_RT$VAF, levels= c("low","WT","high"))
 endometrial_all_NoRT$VAF <- factor(endometrial_all_NoRT$VAF, levels= c("low","WT","high"))
 
-##Generate Cox analysis objects for No RT and RT based on VAF
+##Generate Cox analysis objects for No RT and RT based on VAF using previously created survival objects
 endo_cox_RT <- coxph(endo_surv_RT ~ VAF, data = endometrial_all_RT)
 endo_cox_NoRT <- coxph(endo_surv_NoRT ~ VAF, data = endometrial_all_NoRT)
 
@@ -81,7 +81,7 @@ dev.off()
 endometrial_all_NoRT$P53.Mut <- factor(endometrial_all_NoRT$P53.Mut, levels = c(0,1), labels= c("p53 WT","p53 Mutant"))
 endometrial_all_RT$P53.Mut <- factor(endometrial_all_RT$P53.Mut, levels = c(0,1), labels= c("p53 WT","p53 Mutant"))
 
-##Fit survival curves based on P53.Mut status and generate Kaplan-Meier plots for both No RT and RT
+##Fit survival curves based on P53.Mut status using previously created survival objects and generate Kaplan-Meier plots for both No RT and RT 
 endo_fit_RT_Mut <- surv_fit(endo_surv_RT ~ P53.Mut, data = endometrial_all_RT)
 KMRT_Mut <- ggsurvplot(endo_fit_RT_Mut, data = endometrial_all_RT, palette = alpha(c("royalblue", "firebrick2"), 0.6), risk.table = TRUE, 
            risk.table.height = 0.30, xlab = "Time in Months", xlim = c(0,150), legend.labs = c("p53 WT","p53 Mutant"), 
@@ -104,7 +104,7 @@ dev.off()
 
 
 #Cox Hazards Analysis on RT, No RT and TP53 WT, Mutant (no multiples) (Figure 1 stats)
-##Generate Cox analysis objects for No RT and RT based on P53.Mut status
+##Generate Cox analysis objects for No RT and RT based on P53.Mut status using previously created survival objects
 endo_cox_RT_Mut <- coxph(endo_surv_RT ~ P53.Mut, data = endometrial_all_RT)
 
 endo_cox_NoRT_Mut <- coxph(endo_surv_NoRT ~ P53.Mut, data = endometrial_all_NoRT)
