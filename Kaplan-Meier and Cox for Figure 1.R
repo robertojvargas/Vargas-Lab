@@ -1,4 +1,4 @@
-#Load appropriate libraries
+#Load appropriate packages
 library(readxl)
 library(openxlsx)
 library(survival)
