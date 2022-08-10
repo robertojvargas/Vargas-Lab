@@ -1,4 +1,4 @@
-#Load required libraries
+#Load required packages
 library(readxl)
 library(openxlsx)
 library(RColorBrewer)
