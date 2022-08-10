@@ -8,6 +8,7 @@ library(grid)
 #Set the working directory
 setwd("/Users/pettya/Desktop/R Analysis")
 
+
 #Dual barplot for patient sCNA versus TP53 VAF (Figure 1A)
 ##Read in filtered (no Stage IV or chemo) and compiled endometrial TP53 TCGA dataset (No RT and RT)
 endometrial <- read_xlsx("Final TCGA with p53 and RT annotation - R.xlsx", 1)
