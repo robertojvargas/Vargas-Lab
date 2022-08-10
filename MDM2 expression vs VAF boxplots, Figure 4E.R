@@ -64,7 +64,7 @@ qb <- qb + geom_boxplot(fill= "grey", width= 0.6, outlier.shape = NA) +
 qb <- qb + annotate("text", x= 2:3, y= 4.5, label= "***", size= 8, colour= "brown")  
 
 ##Print graph as jpeg file
-jpeg("VAF vs MDM2 expression boxplot, point color, 6-23-22.jpeg", width= 720, height= 720, units= "px", res= 150)
+jpeg("VAF vs MDM2 expression boxplot, point color.jpeg", width= 720, height= 720, units= "px", res= 150)
 print(qb)
 
 dev.off()
