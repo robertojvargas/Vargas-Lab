@@ -48,7 +48,7 @@ endometrial <- endometrial[order(endometrial$Progress.Free.Survival..Months.),]
 names(endometrial)[22] <- "Radiotherapy"
 names(endometrial)[14] <- "Stage"
 
-##Use gtsummary function tbl_uvregression to generate summary table of univariate Cox hazards analysis results (Supp Fugure 1B)
+##Use gtsummary function tbl_uvregression to generate summary table of univariate Cox hazards analysis results (Supp Figure 1B)
 model <- endometrial %>% 
   select(sCNA, Age, p53, Radiotherapy, Stage, Grade, Progress.Free.Survival..Months., Progression) %>% 
   tbl_uvregression(method = coxph, y= Surv(time = Progress.Free.Survival..Months., event = Progression), exponentiate = TRUE, hide_n = TRUE) %>%
@@ -60,7 +60,7 @@ model <- endometrial %>%
 gt::gtsave(as_gt(model), file = "Cox table vs all.png")
 
 
-##Use gtsummary function tbl_regression to generate summary table of multivariate Cox hazards analysis results (Supp Fugure 1C)
+##Use gtsummary function tbl_regression to generate summary table of multivariate Cox hazards analysis results (Supp Figure 1C)
 model_mult <- coxph(Surv(time = endometrial$Progress.Free.Survival..Months., event = endometrial$Progression) ~ sCNA + Stage + Grade + p53, data = endometrial) %>% 
   tbl_regression(exponentiate = TRUE) %>%
   bold_labels() %>% 
