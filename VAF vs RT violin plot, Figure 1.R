@@ -1,6 +1,5 @@
 #Load required packages
 library(readxl)
-library(openxlsx)
 library(RColorBrewer)
 library(tidyverse)
 
