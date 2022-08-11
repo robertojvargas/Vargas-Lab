@@ -38,7 +38,7 @@ JHNut$d1 <- as.numeric(JHNut$d1)
 Hec8Nut$d1 <- as.numeric(Hec8Nut$d1)
 HecBNut$d1 <- as.numeric(HecBNut$d1)
 
-##Fit marginal dose response curves to data using fitMarginal function in BIGL
+##Fit marginal dose response curves to data using fitMarginals function in BIGL
 Marg1Fit <- fitMarginals(JHAMG, method= "nlslm", names= c("AMG-232", "Radiation"))
 Marg2Fit <- fitMarginals(Hec8AMG, method= "nlslm", names= c("AMG-232", "Radiation"))
 Marg3Fit <- fitMarginals(HecBAMG, method= "nlslm", names= c("AMG-232", "Radiation"))
