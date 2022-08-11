@@ -80,7 +80,7 @@ isobologram(HecBNutSurf)
 dev.off()
 
 
-##Generate contour plots of synergy scores using contour function in BIGL and save as jpegs
+##Generate contour plots of MaxR synergy scores using contour function in BIGL and save as jpegs
 jpeg("JHUEM2 + AMG contour, HSA.jpeg", width= 1200, height= 720, units= "px", res= 150)
 contour(JHAMGSurf, main= "Contour Plot for JHUEM2 MaxR")
 dev.off()
