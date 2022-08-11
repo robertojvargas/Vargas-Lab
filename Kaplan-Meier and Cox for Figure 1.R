@@ -1,6 +1,5 @@
 #Load appropriate packages
 library(readxl)
-library(openxlsx)
 library(survival)
 library(survminer)
 library(tidyverse)
@@ -11,7 +10,7 @@ setwd("/Users/pettya/Desktop/R Analysis")
 
 #Kaplan-Meier analysis on RT, No RT and TP53 WT, VAF Low, VAF High (no multiples) (Figures 1 C,D)
 ##Read in excel file with all TCGA patient data
-endometrial_all <- read.xlsx("Final TCGA with p53 and RT annotation - R.xlsx", 1)
+endometrial_all <- read_xlsx("Final TCGA with p53 and RT annotation - R.xlsx", 1)
 
 ##Create new categorical "Progressed" and "VAF" columns
 endometrial_all$Progressed <- ifelse(endometrial_all$Progression.Free.Status == "0:CENSORED", 0, 1)
