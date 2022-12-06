@@ -21,6 +21,8 @@ JHLog <- dcast(JHLog, Cell ~ Variant, mean)
 
 ##Pivot data again to long form  
 JHLog <- melt(JHLog, id= c("Cell"))
+
+##Group cell lines by variant and calculate Mean, SD, and SEM
 Grouped <- JHLog %>%
   group_by(variable) %>%
   summarise(Mean= mean(value), SD= sd(value))
@@ -29,7 +31,7 @@ Grouped <- Grouped %>%
   mutate(SEM= SD/(sqrt(4)))
 
 
-##Order rows by decreasing mean Log2 AUC/mCherry value and number rows from 1-24
+##Order rows by decreasing mean Log2 AUC/mCherry value and number rows from 1-6
 JHLogorder <- Grouped[order(Grouped$Mean, decreasing = TRUE),]
 x <- 1:nrow(JHLogorder)
 names(JHLogorder)[1] <- "Variant"
