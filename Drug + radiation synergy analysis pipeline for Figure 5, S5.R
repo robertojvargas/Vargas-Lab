@@ -121,7 +121,7 @@ AllMean <- rbind(JHMean, Hec8Mean, HecBMean)
 
 ###Write all dataframes to excel file
 Sheets <- list("All"= AllMean, "JHUEM2"= JHMean, "Hec108" = Hec8Mean, "Hec1B"= HecBMean)
-write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -AMG232 + Rad, AP47.xlsx")
+write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -AMG232 + Rad, AP46.xlsx")
 
 
 ##Synergy analysis with BIGL
