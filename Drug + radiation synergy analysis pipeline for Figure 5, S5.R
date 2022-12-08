@@ -285,12 +285,12 @@ AllMean <- rbind(JHMean, Hec8Mean, HecBMean)
 
 ###Write all dataframes to excel file
 Sheets <- list("All"= AllMean, "JHUEM2"= JHMean, "Hec108" = Hec8Mean, "Hec1B"= HecBMean)
-write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP46.xlsx")
+write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP47.xlsx")
 
 
 ##Synergy analysis with BIGL
 ###Read in excel files containing Nutlin + Radiation responses for JHUEM2, Hec108, Hec1B
-NutlinSyn <- read_xlsx("Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP46.xlsx", 1)
+NutlinSyn <- read_xlsx("Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP47.xlsx", 1)
 
 ###Create separate Nutlin + Radiation tables for each cell line and rename columns for BIGL algorithms
 JHNut <- subset(NutlinSyn, Cell== "JHUEM2", select = c("Cell", "d2", "d1", "effect"))
