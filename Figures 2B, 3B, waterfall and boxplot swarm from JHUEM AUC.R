@@ -73,11 +73,11 @@ names(JHLog)[1] <- "KO"
 
 ##Pivot table to long form and convert KO column to factor
 JHLog <- melt(JHLog, id= c("KO"))
-JHLog$KO <- factor(JHLog$KO, levels= c("NTC", "KO 5.1", "KO 6.1"))
+JHLog$KO <- factor(JHLog$KO, levels= c("NTC", "5.1", "6.1"))
 
 JSw <- ggplot(JHLog, aes(x= KO, y= value)) + 
   theme_classic() + scale_y_continuous(limits= c(0, 5), breaks= seq(0, 5, 1)) +
-  scale_x_discrete(expand= c(0.5,0.5)) + labs(title= NULL, x= NULL, y= "Radiation Response (Mean AUC)") +
+  scale_x_discrete(expand= expansion(mult= c(0.25, 1))) + labs(title= NULL, x= NULL, y= "Radiation Response (Mean AUC)") +
   theme(axis.text.y= element_text(face= "bold", size= 16), axis.title.y= element_text(size= 18, face= "bold"), axis.text.x = element_text(face = "bold", size= 18)) +
   theme(legend.position= "none", axis.line = element_line(size= 1))
 JSw <- JSw + geom_boxplot(fill= "grey", width= 0.4)
