@@ -121,7 +121,7 @@ AllMean <- rbind(JHMean, Hec8Mean, HecBMean)
 
 ###Write all dataframes to excel file
 Sheets <- list("All"= AllMean, "JHUEM2"= JHMean, "Hec108" = Hec8Mean, "Hec1B"= HecBMean)
-write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -AMG232 + Rad, AP46.xlsx")
+write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -AMG232 + Rad, AP47.xlsx")
 
 
 ##Synergy analysis with BIGL
@@ -285,7 +285,7 @@ AllMean <- rbind(JHMean, Hec8Mean, HecBMean)
 
 ###Write all dataframes to excel file
 Sheets <- list("All"= AllMean, "JHUEM2"= JHMean, "Hec108" = Hec8Mean, "Hec1B"= HecBMean)
-write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP47.xlsx")
+write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP46.xlsx")
 
 
 ##Synergy analysis with BIGL
@@ -293,12 +293,12 @@ write.xlsx(Sheets, "Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP47.xlsx")
 NutlinSyn <- read_xlsx("Synergy JHUEM2, Hec108, Hec1B -Nutlin + Rad, AP46.xlsx", 1)
 
 ###Create separate Nutlin + Radiation tables for each cell line and rename columns for BIGL algorithms
-JHNut <- subset(NutlinSyn, Cell= "JHUEM2", select = c("Cell", "d2", "d1", "effect"))
-Hec8Nut <- subset(NutlinSyn, Cell= "Hec108", select = c("Cell", "d2", "d1", "effect"))
-HecBNut <- subset(NutlinSyn, Cell= "Hec1B", select = c("Cell", "d2", "d1", "effect"))
+JHNut <- subset(NutlinSyn, Cell== "JHUEM2", select = c("Cell", "d2", "d1", "effect"))
+Hec8Nut <- subset(NutlinSyn, Cell== "Hec108", select = c("Cell", "d2", "d1", "effect"))
+HecBNut <- subset(NutlinSyn, Cell== "Hec1B", select = c("Cell", "d2", "d1", "effect"))
 
 ###Convert Nutlin and Radiation doses to numeric
-JHNut$d1 <- as.numeric(JHNutd1)
+JHNut$d1 <- as.numeric(JHNut$d1)
 Hec8Nut$d1 <- as.numeric(Hec8Nut$d1)
 HecBNut$d1 <- as.numeric(HecBNut$d1)
 JHNut$d2 <- as.numeric(JHNut$d2)
