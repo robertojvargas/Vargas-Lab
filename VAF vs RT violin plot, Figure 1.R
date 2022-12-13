@@ -1,5 +1,6 @@
-#Load required packages
+#Load required libraries
 library(readxl)
+library(openxlsx)
 library(RColorBrewer)
 library(tidyverse)
 
@@ -11,7 +12,7 @@ endometrial <- read_xlsx("Final TCGA with p53 and RT annotation - R.xlsx", 1)
 
 ##Change RT variable and convert to factor
 endometrial$Radiation.Therapy <- ifelse(endometrial$Radiation.Therapy == "Yes", "RT", "No RT")
-names(endometrial)[23] <- "RT"
+names(endometrial)[22] <- "RT"
 endometrial$RT <- factor(endometrial$RT)
 
 ##Remove TP53 WT patients and convert Allelic Frequency to numeric
